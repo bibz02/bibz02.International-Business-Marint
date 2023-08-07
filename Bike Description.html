@@ -1,0 +1,147 @@
+<html>
+  <head>
+    <title>Pie Chart with Random Colors</title>
+    <!-- Load Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>MRN 20</h1>
+    <canvas id="myPieChart"></canvas>
+
+    <script>
+      // Function to generate a random color in hexadecimal format
+      function getRandomColor() {
+        const letters = "0123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+
+      // Sample data for the pie chart
+      const data = {
+        labels: [
+          "MRN20 ALCATRAZ",
+          "MRN20 BOBCAT",
+          "MRN20 BOLINAS RIDGE",
+          "MRN20 HEADLANDS 2",
+          "MRN20 LOMBARD 1",
+          "MRN20 LOMBARD 2",
+          "MRN20 NICASIO",
+          "MRN20 NICASIO PLUS",
+          "MRN20 PINE MOUNTAIN 1",
+          "MRN20 PINE MOUNTAIN 2",
+          "MRN20 RIFT ZONE 1",
+          "MRN20 RIFT ZONE 3",
+          "MRN20 RIFT ZONE CARBON",
+          "MRN20 WILDCAT TRAIL",
+          "MRN20 WILDCAT TRAIL",
+        ],
+        datasets: [
+          {
+            data: [1, 19, 23, 3, 10, 1, 6, 12, 2, 5, 1, 17, 1, 1],
+            backgroundColor: [
+              getRandomColor(),
+              getRandomColor(),
+              getRandomColor(),
+              getRandomColor(),
+              getRandomColor(),
+              getRandomColor(),
+              getRandomColor(),
+              getRandomColor(),
+              getRandomColor(),
+              getRandomColor(),
+              getRandomColor(),
+              getRandomColor(),
+              getRandomColor(),
+              getRandomColor(),
+              getRandomColor(),
+            ],
+            borderWidth: 1,
+          },
+        ],
+      };
+
+      // Create the pie chart
+      const ctx = document.getElementById("myPieChart").getContext("2d");
+      const myPieChart = new Chart(ctx, {
+        type: "pie",
+        data: data,
+      });
+    </script>
+  </body>
+</html>
+<html>
+  <head>
+    <title>Pie Chart with Random Colors</title>
+    <!-- Load Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .chart-container {
+        width: 60%; /* Set the width of the chart container */
+        max-width: 500px; /* Set a maximum width if needed */
+        height: 50vh; /* Set the height of the chart container */
+        max-height: 300px; /* Set a maximum height if needed */
+        position: relative;
+      }
+
+      /* Add CSS for the legend */
+      .chart-legend ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        left: 0;
+        top: 50%; /* Adjust this value to control the vertical position */
+        transform: translateY(-50%);
+        text-align: right;
+      }
+
+      .chart-legend li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+      }
+
+      .chart-legend span {
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+</html>

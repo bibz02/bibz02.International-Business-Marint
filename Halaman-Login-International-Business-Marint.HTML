@@ -1,0 +1,165 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Halaman Login</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+      }
+
+      header {
+        background-color: #333;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        /* Set ukuran dan posisi logo Anda di sini */
+        /* Misalnya: */
+        /* width: 100px; */
+        /* height: 50px; */
+        /* margin: 0 20px; */
+      }
+
+      .logo img {
+        max-width: 100px; /* Menentukan lebar maksimal gambar */
+        height: auto; /* Mengatur ketinggian sesuai proporsi asli */
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+
+      nav ul li {
+        margin: 0 15px;
+      }
+
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      nav ul li a:hover {
+        text-decoration: underline;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh; /* Perbesar bagian login container */
+      }
+
+      .login-form {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+      }
+
+      .login-form h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .login-form label {
+        font-size: 14px;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .login-form input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 20px;
+      }
+
+      .login-form button {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .login-form button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="img/logo_marint-removebg-preview.png" alt="Logo" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <form class="login-form" onsubmit="login(event)">
+        <h1>Login</h1>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required />
+        <label for="password">Password</label>
+        <div class="password-container">
+          <input type="password" id="password" name="password" required />
+          <input type="checkbox" onclick="showPassword()" />
+        </div>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+    <script>
+      function login(event) {
+        event.preventDefault();
+
+        // Mendapatkan nilai input username dan password
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        // Validasi username dan password
+        if (username === "marin" && password === "inter86") {
+          // Jika login berhasil, alihkan ke International-Business-Marint.html
+          window.location.href = "International-Business-Marint.html";
+        } else {
+          // Jika login gagal, tampilkan pesan kesalahan
+          alert("Username atau password salah. Silakan coba lagi.");
+        }
+      }
+
+      function showPassword() {
+        var passwordInput = document.getElementById("password");
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+        } else {
+          passwordInput.type = "password";
+        }
+      }
+    </script>
+  </body>
+</html>
